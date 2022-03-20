@@ -31,8 +31,8 @@ class SecondScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            // Navigate back to first route when tapped.
-          },
+  Navigator.pop(context);
+},
           child: const Text('Go back!'),
         ),
       ),
