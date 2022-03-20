@@ -11,13 +11,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Navigation',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const FirstScreen(),
-    );
-  }
+      title: 'Named Routes Demo',
+  // Start the app with the "/" named route. In this case, the app starts
+  // on the FirstScreen widget.
+  initialRoute: '/',
+  routes: {
+    // When navigating to the "/" route, build the FirstScreen widget.
+    '/': (context) => const FirstScreen(),
+    // When navigating to the "/second" route, build the SecondScreen widget.
+    '/second': (context) => const SecondScreen(),
+  },
+);
+}
 }
 
 class FirstScreen extends StatelessWidget {
@@ -32,7 +37,8 @@ class FirstScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            // Navigate to the second screen when tapped.
+            // Navigate to the second screen using a named route.
+            Navigator.pushNamed(context, '/second');
           },
           child: const Text('Launch screen'),
         ),
@@ -40,4 +46,3 @@ class FirstScreen extends StatelessWidget {
     );
   }
 }
-

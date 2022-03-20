@@ -31,7 +31,9 @@ class SecondScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            // Navigate back to first screen when tapped.
+            // Navigate back to the first screen by popping the current route
+            // off the stack.
+            Navigator.pop(context);
           },
           child: const Text('Go back!'),
         ),
