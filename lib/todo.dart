@@ -1,7 +1,9 @@
+import 'package:flutter_navigation_app/main.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_navigation_app/todo.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -15,4 +17,11 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class Todo {
+  final String title;
+  final String description;
+
+  const Todo(this.title, this.description);
 }
